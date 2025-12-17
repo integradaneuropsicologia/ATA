@@ -839,13 +839,8 @@ $("#form").addEventListener("submit", async (e)=>{
       submitted_at: new Date().toISOString(),
       total: totalScore,        // soma dos módulos escalados
       categoria: categoria,     // string com cada módulo e escore escalado
-      questions: qaText,        // TODAS as perguntas + SIM/NÃO + valor
-      metrics: JSON.stringify({
-        answers,          // mapa pergunta->0/1
-        moduleRawSums,    // soma bruta por módulo
-        moduleScaled,     // soma normalizada por módulo
-        duration_sec: durationSec
-      })
+      questions: "", //qaText,        
+      metrics: "" // JSON.stringify({answers,moduleRawSums, moduleScaled, duration_sec: durationSec})
     };
 
     await sheetCreate(SHEETS.SCORES, row);
